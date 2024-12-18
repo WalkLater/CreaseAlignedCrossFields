@@ -48,7 +48,7 @@ function [dirs1, fname, data] = SolveLpCrossField(X, T, mname, n, p, Visualize, 
         return;
     end
     
-    fiber = OctaMBO;
+    fiber = OctaMBO;                                                                            % need mosek
     data = getMeshData(X,T);
     
     % set up sph boundary
