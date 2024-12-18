@@ -100,7 +100,7 @@ function [dirs1, fname, data] = SolveLpCrossField(X, T, mname, n, p, Visualize, 
         framesProjt = framesProj';
         cm = DM(:,goodFrameInds9Flat)*framesProjt(goodFrameInds9Flat); if numel(cm)==0; cm = zeros(data.numInteriorEdges*9,1); end;
         try 
-            [xbad] = MosekSoftCrossFieldsWrapper(AM, u0(1:7*numel(badFrameInds)), DM(:,badFrameInds9Flat), prepocW, psymbol, n, cm);
+            [xbad] = MosekSoftCrossFieldsWrapper(AM, u0(1:7*numel(badFrameInds)), DM(:,badFrameInds9Flat), prepocW, psymbol, n, cm);            % need mosek
         catch exception
             mosekError = true;
             if contains(exception.message,'Unknown') && exist('x','var')
