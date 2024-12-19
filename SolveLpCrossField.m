@@ -120,7 +120,7 @@ function [dirs1, fname, data] = SolveLpCrossField(X, T, mname, n, p, Visualize, 
         randpert = zeros(9,numel(badFrameInds));
         while true
             try
-                framesProj(badFrameInds,:) = fiber.proj(framesUnproj(badFrameInds,:)' + randpert)';
+                framesProj(badFrameInds,:) = fiber.proj(framesUnproj(badFrameInds,:)' + randpert)';                                            %need mosek
                 break;
             catch 
                 randpert = (rand(9,numel(badFrameInds))-.5)*1e-12;
